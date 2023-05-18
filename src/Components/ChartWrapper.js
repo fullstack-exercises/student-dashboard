@@ -35,7 +35,7 @@ const options = {
   },
 };
 
-const labels = studentsData.map((student) => student.name);
+const labels = studentsData.map((student) => student.project);
 
 const data = {
   labels,

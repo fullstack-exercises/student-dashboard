@@ -67,7 +67,7 @@ const studentsData = [
   },
   {
     name: "Aranka",
-    project: "W1D3 - Project - Guess-the-number",
+    project: "W1D3",
     difficultyRate: "2",
     funRate: "3",
   },
@@ -79,13 +79,13 @@ const studentsData = [
   },
   {
     name: "Aranka",
-    project: "W1D4 - Project - Kleurentoggle",
+    project: "W1D4",
     difficultyRate: "4",
     funRate: "3",
   },
   {
     name: "Aranka",
-    project: "W1D5 - Project - Galgje",
+    project: "W1D5",
     difficultyRate: "4",
     funRate: "1",
   },
@@ -157,7 +157,7 @@ const studentsData = [
   },
   {
     name: "Aranka",
-    project: "W2D5 - Project - Filmzoeker",
+    project: "W2D5",
     difficultyRate: "2",
     funRate: "2",
   },
@@ -241,7 +241,7 @@ const studentsData = [
   },
   {
     name: "Aranka",
-    project: "W3D5 - Project - Todo-List",
+    project: "W3D5",
     difficultyRate: "1",
     funRate: "1",
   },
@@ -301,7 +301,7 @@ const studentsData = [
   },
   {
     name: "Aranka",
-    project: "W4D3 - Project - Next-Level CSS",
+    project: "W4D3 ",
     difficultyRate: "4",
     funRate: "4",
   },
@@ -313,7 +313,7 @@ const studentsData = [
   },
   {
     name: "Aranka",
-    project: "W5D5 - Project - Lil_Playlist",
+    project: "W5D5",
     difficultyRate: "3",
     funRate: "2",
   },
@@ -331,7 +331,7 @@ const studentsData = [
   },
   {
     name: "Aranka",
-    project: "W6D2 - Project - Eindopdracht",
+    project: "W6D2",
     difficultyRate: "3",
     funRate: "4",
   },
@@ -403,7 +403,7 @@ const studentsData = [
   },
   {
     name: "Evelyn",
-    project: "W1D3 - Project - Guess-the-number",
+    project: "W1D3",
     difficultyRate: "5",
     funRate: "5",
   },
@@ -415,13 +415,13 @@ const studentsData = [
   },
   {
     name: "Evelyn",
-    project: "W1D4 - Project - Kleurentoggle",
+    project: "W1D4",
     difficultyRate: "3",
     funRate: "4",
   },
   {
     name: "Evelyn",
-    project: "W1D5 - Project - Galgje",
+    project: "W1D5",
     difficultyRate: "3",
     funRate: "3",
   },
@@ -493,7 +493,7 @@ const studentsData = [
   },
   {
     name: "Evelyn",
-    project: "W2D5 - Project - Filmzoeker",
+    project: "W2D5",
     difficultyRate: "3",
     funRate: "4",
   },
@@ -577,7 +577,7 @@ const studentsData = [
   },
   {
     name: "Evelyn",
-    project: "W3D5 - Project - Todo-List",
+    project: "W3D5",
     difficultyRate: "2",
     funRate: "5",
   },
@@ -637,7 +637,7 @@ const studentsData = [
   },
   {
     name: "Evelyn",
-    project: "W4D3 - Project - Next-Level CSS",
+    project: "W4D3",
     difficultyRate: "1",
     funRate: "5",
   },
@@ -649,7 +649,7 @@ const studentsData = [
   },
   {
     name: "Evelyn",
-    project: "W5D5 - Project - Lil_Playlist",
+    project: "W5D5",
     difficultyRate: "4",
     funRate: "3",
   },
@@ -667,7 +667,7 @@ const studentsData = [
   },
   {
     name: "Evelyn",
-    project: "W6D2 - Project - Eindopdracht",
+    project: "W6D2",
     difficultyRate: "5",
     funRate: "5",
   },
@@ -739,7 +739,7 @@ const studentsData = [
   },
   {
     name: "Floris",
-    project: "W1D3 - Project - Guess-the-number",
+    project: "W1D3",
     difficultyRate: "2",
     funRate: "2",
   },
@@ -751,13 +751,13 @@ const studentsData = [
   },
   {
     name: "Floris",
-    project: "W1D4 - Project - Kleurentoggle",
+    project: "W1D4",
     difficultyRate: "4",
     funRate: "3",
   },
   {
     name: "Floris",
-    project: "W1D5 - Project - Galgje",
+    project: "W1D5",
     difficultyRate: "4",
     funRate: "4",
   },
@@ -829,7 +829,7 @@ const studentsData = [
   },
   {
     name: "Floris",
-    project: "W2D5 - Project - Filmzoeker",
+    project: "W2D5",
     difficultyRate: "4",
     funRate: "1",
   },
@@ -913,7 +913,7 @@ const studentsData = [
   },
   {
     name: "Floris",
-    project: "W3D5 - Project - Todo-List",
+    project: "W3D5",
     difficultyRate: "4",
     funRate: "2",
   },
@@ -973,7 +973,7 @@ const studentsData = [
   },
   {
     name: "Floris",
-    project: "W4D3 - Project - Next-Level CSS",
+    project: "W4D3",
     difficultyRate: "2",
     funRate: "2",
   },
@@ -985,7 +985,7 @@ const studentsData = [
   },
   {
     name: "Floris",
-    project: "W5D5 - Project - Lil_Playlist",
+    project: "W5D5",
     difficultyRate: "3",
     funRate: "1",
   },
@@ -1003,7 +1003,7 @@ const studentsData = [
   },
   {
     name: "Floris",
-    project: "W6D2 - Project - Eindopdracht",
+    project: "W6D2",
     difficultyRate: "4",
     funRate: "1",
   },
@@ -1075,7 +1075,7 @@ const studentsData = [
   },
   {
     name: "Hector",
-    project: "W1D3 - Project - Guess-the-number",
+    project: "W1D3",
     difficultyRate: "3",
     funRate: "1",
   },
@@ -1087,13 +1087,13 @@ const studentsData = [
   },
   {
     name: "Hector",
-    project: "W1D4 - Project - Kleurentoggle",
+    project: "W1D4",
     difficultyRate: "1",
     funRate: "3",
   },
   {
     name: "Hector",
-    project: "W1D5 - Project - Galgje",
+    project: "W1D5",
     difficultyRate: "2",
     funRate: "4",
   },
@@ -1165,7 +1165,7 @@ const studentsData = [
   },
   {
     name: "Hector",
-    project: "W2D5 - Project - Filmzoeker",
+    project: "W2D5",
     difficultyRate: "4",
     funRate: "1",
   },
@@ -1249,7 +1249,7 @@ const studentsData = [
   },
   {
     name: "Hector",
-    project: "W3D5 - Project - Todo-List",
+    project: "W3D5",
     difficultyRate: "2",
     funRate: "4",
   },
@@ -1309,7 +1309,7 @@ const studentsData = [
   },
   {
     name: "Hector",
-    project: "W4D3 - Project - Next-Level CSS",
+    project: "W4D3",
     difficultyRate: "3",
     funRate: "1",
   },
@@ -1321,7 +1321,7 @@ const studentsData = [
   },
   {
     name: "Hector",
-    project: "W5D5 - Project - Lil_Playlist",
+    project: "W5D5",
     difficultyRate: "3",
     funRate: "1",
   },
@@ -1339,7 +1339,7 @@ const studentsData = [
   },
   {
     name: "Hector",
-    project: "W6D2 - Project - Eindopdracht",
+    project: "W6D2",
     difficultyRate: "2",
     funRate: "4",
   },
@@ -1411,7 +1411,7 @@ const studentsData = [
   },
   {
     name: "Martina",
-    project: "W1D3 - Project - Guess-the-number",
+    project: "W1D3",
     difficultyRate: "2",
     funRate: "2",
   },
@@ -1423,13 +1423,13 @@ const studentsData = [
   },
   {
     name: "Martina",
-    project: "W1D4 - Project - Kleurentoggle",
+    project: "W1D4",
     difficultyRate: "1",
     funRate: "3",
   },
   {
     name: "Martina",
-    project: "W1D5 - Project - Galgje",
+    project: "W1D5",
     difficultyRate: "1",
     funRate: "4",
   },
@@ -1501,7 +1501,7 @@ const studentsData = [
   },
   {
     name: "Martina",
-    project: "W2D5 - Project - Filmzoeker",
+    project: "W2D5",
     difficultyRate: "2",
     funRate: "4",
   },
@@ -1585,7 +1585,7 @@ const studentsData = [
   },
   {
     name: "Martina",
-    project: "W3D5 - Project - Todo-List",
+    project: "W3D5",
     difficultyRate: "2",
     funRate: "3",
   },
@@ -1645,7 +1645,7 @@ const studentsData = [
   },
   {
     name: "Martina",
-    project: "W4D3 - Project - Next-Level CSS",
+    project: "W4D3",
     difficultyRate: "3",
     funRate: "4",
   },
@@ -1657,7 +1657,7 @@ const studentsData = [
   },
   {
     name: "Martina",
-    project: "W5D5 - Project - Lil_Playlist",
+    project: "W5D5",
     difficultyRate: "1",
     funRate: "1",
   },
@@ -1675,7 +1675,7 @@ const studentsData = [
   },
   {
     name: "Martina",
-    project: "W6D2 - Project - Eindopdracht",
+    project: "W6D2",
     difficultyRate: "1",
     funRate: "4",
   },
@@ -1747,7 +1747,7 @@ const studentsData = [
   },
   {
     name: "Maurits",
-    project: "W1D3 - Project - Guess-the-number",
+    project: "W1D3",
     difficultyRate: "1",
     funRate: "1",
   },
@@ -1759,13 +1759,13 @@ const studentsData = [
   },
   {
     name: "Maurits",
-    project: "W1D4 - Project - Kleurentoggle",
+    project: "W1D4",
     difficultyRate: "4",
     funRate: "1",
   },
   {
     name: "Maurits",
-    project: "W1D5 - Project - Galgje",
+    project: "W1D5",
     difficultyRate: "3",
     funRate: "2",
   },
@@ -1837,7 +1837,7 @@ const studentsData = [
   },
   {
     name: "Maurits",
-    project: "W2D5 - Project - Filmzoeker",
+    project: "W2D5",
     difficultyRate: "3",
     funRate: "1",
   },
@@ -1921,7 +1921,7 @@ const studentsData = [
   },
   {
     name: "Maurits",
-    project: "W3D5 - Project - Todo-List",
+    project: "W3D5",
     difficultyRate: "3",
     funRate: "4",
   },
@@ -1981,7 +1981,7 @@ const studentsData = [
   },
   {
     name: "Maurits",
-    project: "W4D3 - Project - Next-Level CSS",
+    project: "W4D3",
     difficultyRate: "2",
     funRate: "3",
   },
@@ -1993,7 +1993,7 @@ const studentsData = [
   },
   {
     name: "Maurits",
-    project: "W5D5 - Project - Lil_Playlist",
+    project: "W5D5",
     difficultyRate: "4",
     funRate: "2",
   },
@@ -2011,7 +2011,7 @@ const studentsData = [
   },
   {
     name: "Maurits",
-    project: "W6D2 - Project - Eindopdracht",
+    project: "W6D2",
     difficultyRate: "3",
     funRate: "3",
   },
@@ -2083,7 +2083,7 @@ const studentsData = [
   },
   {
     name: "Rahima",
-    project: "W1D3 - Project - Guess-the-number",
+    project: "W1D3",
     difficultyRate: "3",
     funRate: "1",
   },
@@ -2095,13 +2095,13 @@ const studentsData = [
   },
   {
     name: "Rahima",
-    project: "W1D4 - Project - Kleurentoggle",
+    project: "W1D4",
     difficultyRate: "2",
     funRate: "4",
   },
   {
     name: "Rahima",
-    project: "W1D5 - Project - Galgje",
+    project: "W1D5",
     difficultyRate: "3",
     funRate: "3",
   },
@@ -2173,7 +2173,7 @@ const studentsData = [
   },
   {
     name: "Rahima",
-    project: "W2D5 - Project - Filmzoeker",
+    project: "W2D5",
     difficultyRate: "3",
     funRate: "1",
   },
@@ -2257,7 +2257,7 @@ const studentsData = [
   },
   {
     name: "Rahima",
-    project: "W3D5 - Project - Todo-List",
+    project: "W3D5",
     difficultyRate: "2",
     funRate: "4",
   },
@@ -2317,7 +2317,7 @@ const studentsData = [
   },
   {
     name: "Rahima",
-    project: "W4D3 - Project - Next-Level CSS",
+    project: "W4D3",
     difficultyRate: "1",
     funRate: "2",
   },
@@ -2329,7 +2329,7 @@ const studentsData = [
   },
   {
     name: "Rahima",
-    project: "W5D5 - Project - Lil_Playlist",
+    project: "W5D5",
     difficultyRate: "2",
     funRate: "3",
   },
@@ -2347,7 +2347,7 @@ const studentsData = [
   },
   {
     name: "Rahima",
-    project: "W6D2 - Project - Eindopdracht",
+    project: "W6D2",
     difficultyRate: "4",
     funRate: "1",
   },
@@ -2419,7 +2419,7 @@ const studentsData = [
   },
   {
     name: "Sandra",
-    project: "W1D3 - Project - Guess-the-number",
+    project: "W1D3",
     difficultyRate: "2",
     funRate: "4",
   },
@@ -2431,13 +2431,13 @@ const studentsData = [
   },
   {
     name: "Sandra",
-    project: "W1D4 - Project - Kleurentoggle",
+    project: "W1D4",
     difficultyRate: "1",
     funRate: "3",
   },
   {
     name: "Sandra",
-    project: "W1D5 - Project - Galgje",
+    project: "W1D5",
     difficultyRate: "3",
     funRate: "3",
   },
@@ -2509,7 +2509,7 @@ const studentsData = [
   },
   {
     name: "Sandra",
-    project: "W2D5 - Project - Filmzoeker",
+    project: "W2D5",
     difficultyRate: "2",
     funRate: "4",
   },
@@ -2593,7 +2593,7 @@ const studentsData = [
   },
   {
     name: "Sandra",
-    project: "W3D5 - Project - Todo-List",
+    project: "W3D5",
     difficultyRate: "1",
     funRate: "2",
   },
@@ -2653,7 +2653,7 @@ const studentsData = [
   },
   {
     name: "Sandra",
-    project: "W4D3 - Project - Next-Level CSS",
+    project: "W4D3",
     difficultyRate: "3",
     funRate: "4",
   },
@@ -2665,7 +2665,7 @@ const studentsData = [
   },
   {
     name: "Sandra",
-    project: "W5D5 - Project - Lil_Playlist",
+    project: "W5D5",
     difficultyRate: "2",
     funRate: "2",
   },
@@ -2683,7 +2683,7 @@ const studentsData = [
   },
   {
     name: "Sandra",
-    project: "W6D2 - Project - Eindopdracht",
+    project: "W6D2",
     difficultyRate: "4",
     funRate: "1",
   },
@@ -2755,7 +2755,7 @@ const studentsData = [
   },
   {
     name: "Storm",
-    project: "W1D3 - Project - Guess-the-number",
+    project: "W1D3",
     difficultyRate: "3",
     funRate: "4",
   },
@@ -2767,13 +2767,13 @@ const studentsData = [
   },
   {
     name: "Storm",
-    project: "W1D4 - Project - Kleurentoggle",
+    project: "W1D4",
     difficultyRate: "3",
     funRate: "2",
   },
   {
     name: "Storm",
-    project: "W1D5 - Project - Galgje",
+    project: "W1D5",
     difficultyRate: "4",
     funRate: "4",
   },
@@ -2845,7 +2845,7 @@ const studentsData = [
   },
   {
     name: "Storm",
-    project: "W2D5 - Project - Filmzoeker",
+    project: "W2D5",
     difficultyRate: "4",
     funRate: "1",
   },
@@ -2929,7 +2929,7 @@ const studentsData = [
   },
   {
     name: "Storm",
-    project: "W3D5 - Project - Todo-List",
+    project: "W3D5",
     difficultyRate: "3",
     funRate: "2",
   },
@@ -2989,7 +2989,7 @@ const studentsData = [
   },
   {
     name: "Storm",
-    project: "W4D3 - Project - Next-Level CSS",
+    project: "W4D3",
     difficultyRate: "4",
     funRate: "1",
   },
@@ -3001,7 +3001,7 @@ const studentsData = [
   },
   {
     name: "Storm",
-    project: "W5D5 - Project - Lil_Playlist",
+    project: "W5D5",
     difficultyRate: "1",
     funRate: "2",
   },
@@ -3019,7 +3019,7 @@ const studentsData = [
   },
   {
     name: "Storm",
-    project: "W6D2 - Project - Eindopdracht",
+    project: "W6D2",
     difficultyRate: "3",
     funRate: "3",
   },
@@ -3091,7 +3091,7 @@ const studentsData = [
   },
   {
     name: "Wietske",
-    project: "W1D3 - Project - Guess-the-number",
+    project: "W1D3",
     difficultyRate: "2",
     funRate: "4",
   },
@@ -3103,13 +3103,13 @@ const studentsData = [
   },
   {
     name: "Wietske",
-    project: "W1D4 - Project - Kleurentoggle",
+    project: "W1D4",
     difficultyRate: "2",
     funRate: "3",
   },
   {
     name: "Wietske",
-    project: "W1D5 - Project - Galgje",
+    project: "W1D5",
     difficultyRate: "3",
     funRate: "3",
   },
@@ -3181,7 +3181,7 @@ const studentsData = [
   },
   {
     name: "Wietske",
-    project: "W2D5 - Project - Filmzoeker",
+    project: "W2D5",
     difficultyRate: "2",
     funRate: "2",
   },
@@ -3265,7 +3265,7 @@ const studentsData = [
   },
   {
     name: "Wietske",
-    project: "W3D5 - Project - Todo-List",
+    project: "W3D5",
     difficultyRate: "2",
     funRate: "4",
   },
@@ -3325,7 +3325,7 @@ const studentsData = [
   },
   {
     name: "Wietske",
-    project: "W4D3 - Project - Next-Level CSS",
+    project: "W4D3",
     difficultyRate: "4",
     funRate: "2",
   },
@@ -3337,7 +3337,7 @@ const studentsData = [
   },
   {
     name: "Wietske",
-    project: "W5D5 - Project - Lil_Playlist",
+    project: "W5D5",
     difficultyRate: "4",
     funRate: "2",
   },
@@ -3355,7 +3355,7 @@ const studentsData = [
   },
   {
     name: "Wietske",
-    project: "W6D2 - Project - Eindopdracht",
+    project: "W6D2",
     difficultyRate: "1",
     funRate: "2",
   },

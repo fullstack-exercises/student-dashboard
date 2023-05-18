@@ -3,9 +3,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./Pages/Layout";
 import Home from "./Pages/Home";
 import Students from "./Pages/Students";
-import studentsData from "./studentsData";
-
-console.log(studentsData);
 
 function App() {
   return (

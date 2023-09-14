@@ -35,7 +35,26 @@ function Chart() {
     },
   };
 
-  const labels = studentsData.map((student) => student.project);
+  /// Remove duplicate projects and store them in a label const to use for the chart
+  function removeDuplicateProjects(data) {
+    const uniqueProjects = {};
+
+    const filteredData = data.reduce((result, student) => {
+      const key = `${student.project}`;
+
+      if (!uniqueProjects[key]) {
+        uniqueProjects[key] = true;
+        result.push(student);
+      }
+
+      return result;
+    }, []);
+
+    return filteredData;
+  }
+
+  const filteredProjectsData = removeDuplicateProjects(studentsData);
+  const labels = filteredProjectsData.map((student) => student.project);
 
   const [data, setData] = useState({
     labels: labels,

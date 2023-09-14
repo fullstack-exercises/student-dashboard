@@ -35,6 +35,95 @@ function Chart() {
     },
   };
 
+  const filteredProjectsData = removeDuplicateProjects(studentsData);
+  const labels = filteredProjectsData.map((student) => student.project);
+
+  function calculateAverageRatesByProject(studentsData, rateType) {
+    // Create an object to store the project rates and counts
+    const projectData = {};
+
+    // Calculate the total rate and count for each project
+    studentsData.forEach((student) => {
+      const { project } = student;
+      const rate = parseFloat(student[rateType]);
+
+      if (!isNaN(rate)) {
+        if (!projectData[project]) {
+          projectData[project] = {
+            totalRate: 0,
+            count: 0,
+          };
+        }
+
+        projectData[project].totalRate += rate;
+        projectData[project].count++;
+      }
+    });
+
+    // Calculate the average rate for each project
+    const averageRates = {};
+
+    for (const project in projectData) {
+      const { totalRate, count } = projectData[project];
+      averageRates[project] = totalRate / count;
+    }
+
+    return averageRates;
+  }
+
+  const averageFunRatesByProject = calculateAverageRatesByProject(
+    studentsData,
+    "funRate"
+  );
+  const averageDifficultyRatesByProject = calculateAverageRatesByProject(
+    studentsData,
+    "difficultyRate"
+  );
+
+  console.log("Average Fun Rates by Project:", averageFunRatesByProject);
+  console.log(
+    "Average Difficulty Rates by Project:",
+    averageDifficultyRatesByProject
+  );
+
+  // General data
+  const [data, setData] = useState({
+    labels: labels,
+    datasets: [
+      {
+        label: "Fun rate",
+        data: averageFunRatesByProject,
+        backgroundColor: "rgba(53, 162, 235, 0.5)",
+      },
+      {
+        label: "Difficulty rate",
+        data: averageDifficultyRatesByProject,
+        backgroundColor: "rgba(255, 99, 132, 0.5)",
+      },
+    ],
+  });
+
+  // General useful functions
+  const removeDuplicatesArray = (array) =>
+    array.filter((item, index) => array.indexOf(item) === index);
+
+  // Students data
+  const students = studentsData.map((data) => data.firstName);
+  const allStudents = removeDuplicatesArray(students);
+
+  const projects = studentsData.map((data) => data.project);
+
+  // console.log(allStudents);
+
+  // States
+  const [activeChart, setActiveChart] = useState("difficulty");
+  const [selectedStudents, setSelectedStudents] = useState(allStudents);
+
+  const amountStudents = selectedStudents.length;
+  const amountAssignments = removeDuplicatesArray(projects);
+
+  console.log(amountAssignments);
+
   /// Remove duplicate projects and store them in a label const to use for the chart
   function removeDuplicateProjects(data) {
     const uniqueProjects = {};
@@ -53,27 +142,6 @@ function Chart() {
     return filteredData;
   }
 
-  const filteredProjectsData = removeDuplicateProjects(studentsData);
-  const labels = filteredProjectsData.map((student) => student.project);
-
-  const [data, setData] = useState({
-    labels: labels,
-    datasets: [
-      {
-        label: "Difficulty rate",
-        data: studentsData.map((student) => student.difficultyRate),
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
-      },
-      {
-        label: "Fun rate",
-        data: studentsData.map((student) => student.funRate),
-        backgroundColor: "rgba(53, 162, 235, 0.5)",
-      },
-    ],
-  });
-
-  const [activeChart, setActiveChart] = useState("difficulty");
-
   const handleClickDifficulty = () => {
     if (activeChart !== "difficulty") {
       setActiveChart("difficulty");
@@ -82,7 +150,7 @@ function Chart() {
         datasets: [
           {
             ...data.datasets[0],
-            data: studentsData.map((student) => student.difficultyRate),
+            data: averageDifficultyRatesByProject,
           },
           {
             ...data.datasets[1],
@@ -105,10 +173,12 @@ function Chart() {
           },
           {
             ...data.datasets[1],
-            data: studentsData.map((student) => student.funRate),
+            data: averageFunRatesByProject,
           },
         ],
       });
+    } else {
+      return;
     }
   };
 
@@ -120,21 +190,16 @@ function Chart() {
       <Bar options={options} data={data} />
 
       <button
-        onClick={handleClickDifficulty}
-        className={`bg-pink-500 rounded p-3 text-white mr-2 ${
-          activeChart === "difficulty" ? "bg-opacity-100" : "bg-opacity-30"
-        }`}
-      >
-        Difficulty chart
-      </button>
-
-      <button
         onClick={handleClickFun}
-        className={`bg-blue-500 rounded p-3 text-white mr-2 ${
-          activeChart === "fun" ? "bg-opacity-100" : "bg-opacity-30"
-        }`}
+        className={`bg-blue-500 rounded p-3 text-white mr-2 `}
       >
         Fun chart
+      </button>
+      <button
+        onClick={handleClickDifficulty}
+        className={`bg-pink-500 rounded  p-3 text-white mr-2 `}
+      >
+        Difficulty chart
       </button>
     </div>
   );

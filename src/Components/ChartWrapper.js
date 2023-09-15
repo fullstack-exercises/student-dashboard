@@ -5,20 +5,24 @@ import {
   CategoryScale,
   LinearScale,
   BarElement,
+  LineElement,
   Title,
   Tooltip,
   Legend,
+  PointElement,
 } from "chart.js";
 
-import { Bar } from "react-chartjs-2";
+import { Bar, Line } from "react-chartjs-2";
 
 ChartJS.register(
   CategoryScale,
   LinearScale,
   BarElement,
+  PointElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
+  LineElement
 );
 
 function Chart() {
@@ -64,9 +68,7 @@ function Chart() {
 
   const [activeChart, setActiveChart] = useState("");
   const [selectedStudents, setSelectedStudents] = useState(allStudents);
-
-  // const amountStudents = selectedStudents.length;
-  // const amountAssignments = removeDuplicatesArray(projects);
+  const [chartType, setChartType] = useState("bar");
 
   const averageFunRates = calculateAverageRatesByProject(
     studentsData,
@@ -221,6 +223,14 @@ function Chart() {
     }
   };
 
+  const handleBarChartClick = () => {
+    setChartType("bar");
+  };
+
+  const handleLineChartClick = () => {
+    setChartType("line");
+  };
+
   return (
     <div className="container mx-auto">
       <h1 className="uppercase text-2xl lg:text-[64px] mt-10 lg:mt-20 text-indigo-800 font-bold text-center">
@@ -240,7 +250,24 @@ function Chart() {
         ))}
       </div>
 
-      <Bar options={options} data={data} />
+      <button
+        onClick={handleBarChartClick}
+        className={`bg-blue-500 rounded p-3 text-white mr-2`}
+      >
+        Bar Chart
+      </button>
+      <button
+        onClick={handleLineChartClick}
+        className={`bg-green-500 rounded p-3 text-white mr-2`}
+      >
+        Line Chart
+      </button>
+
+      {chartType === "bar" ? (
+        <Bar options={options} data={data} />
+      ) : (
+        <Line options={options} data={data} />
+      )}
 
       <button
         onClick={handleClickFun}

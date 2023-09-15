@@ -213,6 +213,28 @@ function Chart() {
     }
   };
 
+  const handleClickAll = () => {
+    if (activeChart !== "all") {
+      setActiveChart("all");
+
+      setData({
+        ...data,
+        datasets: [
+          {
+            ...data.datasets[0],
+            data: Object.values(averageFunRates),
+          },
+          {
+            ...data.datasets[1],
+            data: Object.values(averageDifficultyRates),
+          },
+        ],
+      });
+    } else {
+      return;
+    }
+  };
+
   const handleCheckboxChange = (studentName) => {
     if (selectedStudents.includes(studentName)) {
       setSelectedStudents((prevSelected) =>
@@ -237,50 +259,82 @@ function Chart() {
         Chart
       </h1>
 
-      <div>
-        {allStudents.map((studentName) => (
-          <label key={studentName}>
-            <input
-              type="checkbox"
-              checked={selectedStudents.includes(studentName)}
-              onChange={() => handleCheckboxChange(studentName)}
-            />
-            {studentName}
-          </label>
-        ))}
-      </div>
-
-      <button
-        onClick={handleBarChartClick}
-        className={`bg-blue-500 rounded p-3 text-white mr-2`}
-      >
-        Bar Chart
-      </button>
-      <button
-        onClick={handleLineChartClick}
-        className={`bg-green-500 rounded p-3 text-white mr-2`}
-      >
-        Line Chart
-      </button>
-
       {chartType === "bar" ? (
-        <Bar options={options} data={data} />
+        <Bar
+          options={options}
+          data={data}
+          className="border border-gray-200 rounded my-8 p-5"
+        />
       ) : (
         <Line options={options} data={data} />
       )}
 
-      <button
-        onClick={handleClickFun}
-        className={`bg-blue-500 rounded p-3 text-white mr-2 `}
-      >
-        Fun chart
-      </button>
-      <button
-        onClick={handleClickDifficulty}
-        className={`bg-pink-500 rounded  p-3 text-white mr-2 `}
-      >
-        Difficulty chart
-      </button>
+      <div className="border border-gray-200 rounded my-8 p-5">
+        <div className="space-x-3">
+          {allStudents.map((studentName) => (
+            <label key={studentName}>
+              <input
+                type="checkbox"
+                checked={selectedStudents.includes(studentName)}
+                onChange={() => handleCheckboxChange(studentName)}
+                className="mr-1 text-gray-300"
+              />
+              {studentName}
+            </label>
+          ))}
+        </div>
+
+        <div className="mt-10 lg:flex lg:justify-between">
+          <div className="space-x-3 mb-10 lg:mb-0">
+            <button
+              onClick={handleBarChartClick}
+              className={`pointer-events-auto rounded-md bg-indigo-600 px-3 py-2 text-[0.8125rem] font-semibold leading-5 text-white hover:bg-indigo-500 ${
+                chartType === "line" ? "opacity-30" : "" // Apply opacity class when chartType is "bar"
+              }`}
+            >
+              Bar Chart
+            </button>
+            <button
+              onClick={handleLineChartClick}
+              className={`pointer-events-auto rounded-md bg-indigo-600 px-3 py-2 text-[0.8125rem] font-semibold leading-5 text-white hover:bg-indigo-500 ${
+                chartType === "bar" ? "opacity-30" : "" // Apply opacity class when chartType is "bar"
+              }`}
+            >
+              Line Chart
+            </button>
+          </div>
+
+          <div className="space-x-3 flex flex-wrap">
+            <button
+              onClick={handleClickAll}
+              className={`pointer-events-auto rounded-md bg-indigo-600 px-3 py-2 text-[0.8125rem] font-semibold leading-5 text-white hover:bg-indigo-500 ${
+                activeChart !== "difficulty" || activeChart !== "fun"
+                  ? "opacity-30"
+                  : "" // Apply opacity class when chartType is "bar"
+              }`}
+            >
+              All charts
+            </button>
+
+            <button
+              onClick={handleClickFun}
+              className={`pointer-events-auto rounded-md bg-indigo-600 px-3 py-2 text-[0.8125rem] font-semibold leading-5 text-white hover:bg-indigo-500 ${
+                activeChart === "difficulty" ? "opacity-30" : "" // Apply opacity class when chartType is "bar"
+              }`}
+            >
+              Fun chart
+            </button>
+            <button
+              onClick={handleClickDifficulty}
+              className={`pointer-events-auto rounded-md bg-indigo-600 px-3 py-2 text-[0.8125rem] font-semibold leading-5 text-white hover:bg-indigo-500 ${
+                activeChart === "fun" ? "opacity-30" : "" // Apply opacity class when chartType is "bar"
+              }`}
+            >
+              Difficulty chart
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -116,7 +116,7 @@ function Chart() {
   // console.log(allStudents);
 
   // States
-  const [activeChart, setActiveChart] = useState("difficulty");
+  const [activeChart, setActiveChart] = useState("");
   const [selectedStudents, setSelectedStudents] = useState(allStudents);
 
   const amountStudents = selectedStudents.length;
@@ -150,11 +150,11 @@ function Chart() {
         datasets: [
           {
             ...data.datasets[0],
-            data: averageDifficultyRatesByProject,
+            data: [],
           },
           {
             ...data.datasets[1],
-            data: [],
+            data: averageDifficultyRatesByProject,
           },
         ],
       });
@@ -169,11 +169,11 @@ function Chart() {
         datasets: [
           {
             ...data.datasets[0],
-            data: [],
+            data: averageFunRatesByProject,
           },
           {
             ...data.datasets[1],
-            data: averageFunRatesByProject,
+            data: [],
           },
         ],
       });

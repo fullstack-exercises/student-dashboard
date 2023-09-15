@@ -1,9 +1,12 @@
 import React from "react";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import ChartWrapper from "../Components/ChartWrapper";
+import { useParams } from "react-router-dom";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const Home = () => {
+const Chart = () => {
+  const { studentName } = useParams();
+
   return (
     <div>
       <ChartWrapper />
@@ -11,4 +14,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Chart;

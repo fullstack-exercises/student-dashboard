@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import studentsData from "../studentsData";
 import {
   Chart as ChartJS,
@@ -39,6 +40,7 @@ function Chart() {
     },
   };
 
+  const navigate = useNavigate();
   const filteredProjectsData = removeDuplicateProjects(studentsData);
   const labels = filteredProjectsData.map((student) => student.project);
 
@@ -236,13 +238,15 @@ function Chart() {
   };
 
   const handleCheckboxChange = (studentName) => {
-    if (selectedStudents.includes(studentName)) {
-      setSelectedStudents((prevSelected) =>
-        prevSelected.filter((name) => name !== studentName)
-      );
-    } else {
-      setSelectedStudents((prevSelected) => [...prevSelected, studentName]);
-    }
+    setSelectedStudents((prevSelected) =>
+      prevSelected.includes(studentName)
+        ? prevSelected.filter((name) => name !== studentName)
+        : [...prevSelected, studentName]
+    );
+
+    const path = `/${studentName}`;
+
+    navigate(path);
   };
 
   const handleBarChartClick = () => {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import studentsData from "../studentsData";
 import {
   Chart as ChartJS,
@@ -38,12 +38,110 @@ function Chart() {
   const filteredProjectsData = removeDuplicateProjects(studentsData);
   const labels = filteredProjectsData.map((student) => student.project);
 
-  function calculateAverageRatesByProject(studentsData, rateType) {
+  const [data, setData] = useState({
+    labels: labels,
+    datasets: [
+      {
+        label: "Fun rate",
+        data: [], // Initially empty
+        backgroundColor: "rgba(53, 162, 235, 0.5)",
+      },
+      {
+        label: "Difficulty rate",
+        data: [], // Initially empty
+        backgroundColor: "rgba(255, 99, 132, 0.5)",
+      },
+    ],
+  });
+
+  const removeDuplicatesArray = (array) =>
+    array.filter((item, index) => array.indexOf(item) === index);
+
+  const students = studentsData.map((data) => data.firstName);
+  const allStudents = removeDuplicatesArray(students);
+
+  const projects = studentsData.map((data) => data.project);
+
+  const [activeChart, setActiveChart] = useState("");
+  const [selectedStudents, setSelectedStudents] = useState(allStudents);
+
+  // const amountStudents = selectedStudents.length;
+  // const amountAssignments = removeDuplicatesArray(projects);
+
+  const averageFunRates = calculateAverageRatesByProject(
+    studentsData,
+    "funRate",
+    selectedStudents
+  );
+
+  const averageDifficultyRates = calculateAverageRatesByProject(
+    studentsData,
+    "difficultyRate",
+    selectedStudents
+  );
+
+  function removeDuplicateProjects(data) {
+    const uniqueProjects = {};
+
+    const filteredData = data.reduce((result, student) => {
+      const key = `${student.project}`;
+
+      if (!uniqueProjects[key]) {
+        uniqueProjects[key] = true;
+        result.push(student);
+      }
+
+      return result;
+    }, []);
+
+    return filteredData;
+  }
+
+  useEffect(() => {
+    // Calculate the initial average rates
+    const averageFunRates = calculateAverageRatesByProject(
+      studentsData,
+      "funRate",
+      selectedStudents
+    );
+
+    const averageDifficultyRates = calculateAverageRatesByProject(
+      studentsData,
+      "difficultyRate",
+      selectedStudents
+    );
+
+    // Update the data state with the calculated average rates
+    setData({
+      ...data,
+      datasets: [
+        {
+          ...data.datasets[0],
+          data: Object.values(averageFunRates),
+        },
+        {
+          ...data.datasets[1],
+          data: Object.values(averageDifficultyRates),
+        },
+      ],
+    });
+  }, [studentsData, selectedStudents]);
+
+  function calculateAverageRatesByProject(
+    studentsData,
+    rateType,
+    selectedStudents
+  ) {
+    // Filter the data based on the rate type (funRate or difficultyRate)
+    const filteredData = studentsData.filter((student) =>
+      selectedStudents.includes(student.firstName)
+    );
+
     // Create an object to store the project rates and counts
     const projectData = {};
 
     // Calculate the total rate and count for each project
-    studentsData.forEach((student) => {
+    filteredData.forEach((student) => {
       const { project } = student;
       const rate = parseFloat(student[rateType]);
 
@@ -71,80 +169,10 @@ function Chart() {
     return averageRates;
   }
 
-  const averageFunRatesByProject = calculateAverageRatesByProject(
-    studentsData,
-    "funRate"
-  );
-  const averageDifficultyRatesByProject = calculateAverageRatesByProject(
-    studentsData,
-    "difficultyRate"
-  );
-
-  console.log("Average Fun Rates by Project:", averageFunRatesByProject);
-  console.log(
-    "Average Difficulty Rates by Project:",
-    averageDifficultyRatesByProject
-  );
-
-  // General data
-  const [data, setData] = useState({
-    labels: labels,
-    datasets: [
-      {
-        label: "Fun rate",
-        data: averageFunRatesByProject,
-        backgroundColor: "rgba(53, 162, 235, 0.5)",
-      },
-      {
-        label: "Difficulty rate",
-        data: averageDifficultyRatesByProject,
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
-      },
-    ],
-  });
-
-  // General useful functions
-  const removeDuplicatesArray = (array) =>
-    array.filter((item, index) => array.indexOf(item) === index);
-
-  // Students data
-  const students = studentsData.map((data) => data.firstName);
-  const allStudents = removeDuplicatesArray(students);
-
-  const projects = studentsData.map((data) => data.project);
-
-  // console.log(allStudents);
-
-  // States
-  const [activeChart, setActiveChart] = useState("");
-  const [selectedStudents, setSelectedStudents] = useState(allStudents);
-
-  const amountStudents = selectedStudents.length;
-  const amountAssignments = removeDuplicatesArray(projects);
-
-  console.log(amountAssignments);
-
-  /// Remove duplicate projects and store them in a label const to use for the chart
-  function removeDuplicateProjects(data) {
-    const uniqueProjects = {};
-
-    const filteredData = data.reduce((result, student) => {
-      const key = `${student.project}`;
-
-      if (!uniqueProjects[key]) {
-        uniqueProjects[key] = true;
-        result.push(student);
-      }
-
-      return result;
-    }, []);
-
-    return filteredData;
-  }
-
   const handleClickDifficulty = () => {
     if (activeChart !== "difficulty") {
       setActiveChart("difficulty");
+
       setData({
         ...data,
         datasets: [
@@ -154,7 +182,7 @@ function Chart() {
           },
           {
             ...data.datasets[1],
-            data: averageDifficultyRatesByProject,
+            data: Object.values(averageDifficultyRates),
           },
         ],
       });
@@ -164,12 +192,13 @@ function Chart() {
   const handleClickFun = () => {
     if (activeChart !== "fun") {
       setActiveChart("fun");
+
       setData({
         ...data,
         datasets: [
           {
             ...data.datasets[0],
-            data: averageFunRatesByProject,
+            data: Object.values(averageFunRates),
           },
           {
             ...data.datasets[1],
@@ -182,11 +211,35 @@ function Chart() {
     }
   };
 
+  const handleCheckboxChange = (studentName) => {
+    if (selectedStudents.includes(studentName)) {
+      setSelectedStudents((prevSelected) =>
+        prevSelected.filter((name) => name !== studentName)
+      );
+    } else {
+      setSelectedStudents((prevSelected) => [...prevSelected, studentName]);
+    }
+  };
+
   return (
     <div className="container mx-auto">
       <h1 className="uppercase text-2xl lg:text-[64px] mt-10 lg:mt-20 text-indigo-800 font-bold text-center">
         Chart
       </h1>
+
+      <div>
+        {allStudents.map((studentName) => (
+          <label key={studentName}>
+            <input
+              type="checkbox"
+              checked={selectedStudents.includes(studentName)}
+              onChange={() => handleCheckboxChange(studentName)}
+            />
+            {studentName}
+          </label>
+        ))}
+      </div>
+
       <Bar options={options} data={data} />
 
       <button
